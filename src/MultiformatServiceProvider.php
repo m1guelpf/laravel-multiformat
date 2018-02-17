@@ -21,6 +21,7 @@ class MultiformatServiceProvider extends ServiceProvider
             if ($this->route('_format') === null) {
                 return value(array_get($responses, $this->format($defaultFormat)));
             }
+            
             return value(array_get($responses, $this->route('_format'), function () {
                 abort(404);
             }));
