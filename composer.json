@@ -1,0 +1,40 @@
+{
+    "name": "m1guelpf/laravel-multiformat",
+    "description": "Multiformat Endpoints in Laravel",
+    "keywords": [
+        "m1guelpf",
+        "laravel",
+        "multiformat"
+    ],
+    "homepage": "https://github.com/m1guelpf/laravel-multiformat",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Miguel Piedrafita",
+            "email": "soy@miguelpiedrafita.com",
+            "homepage": "https://miguelpiedrafita.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "larapack/dd": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "M1guelpf\\Multiformat\\": "src"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "M1guelpf\\Multiformat\\MultiformatServiceProvider"
+            ]
+        }
+    }
+}
