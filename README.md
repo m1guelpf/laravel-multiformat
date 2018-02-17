@@ -3,8 +3,6 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/m1guelpf/laravel-multiformat.svg?style=flat-square)](https://packagist.org/packages/m1guelpf/laravel-multiformat)
 [![Total Downloads](https://img.shields.io/packagist/dt/m1guelpf/laravel-multiformat.svg?style=flat-square)](https://packagist.org/packages/m1guelpf/laravel-multiformat)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
-
 ## Installation
 
 You can install the package via composer:
