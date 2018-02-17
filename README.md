@@ -15,6 +15,7 @@ composer require m1guelpf/laravel-multiformat
 
 ``` php
 <?php
+
 /**
  * Mark a route as 'multiformat' to allow different extensions (html, json, xml, etc.)
  *
@@ -25,6 +26,7 @@ composer require m1guelpf/laravel-multiformat
  *     /podcasts/4.zip
  */
 Route::get('/podcasts/{id}', 'PodcastsController@show')->multiformat();
+
 /**
  * Use `Request::match()` to return the right response for the requested format.
  *
@@ -38,6 +40,7 @@ class PodcastsController
     public function show($id)
     {
         $podcast = Podcast::findOrFail($id);
+        
         return request()->match([
             'html' => view('podcasts.show', [
                 'podcast' => $podcast,
