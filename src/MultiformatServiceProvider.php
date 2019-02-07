@@ -14,7 +14,7 @@ class MultiformatServiceProvider extends ServiceProvider
     public function boot()
     {
         Route::macro('multiformat', function () {
-            return $this->setUri($this->uri().'.{_format?}');
+            return $this->setUri($this->uri().'{_format?}');
         });
 
         Request::macro('match', function ($responses, $defaultFormat = 'html') {
@@ -22,7 +22,7 @@ class MultiformatServiceProvider extends ServiceProvider
                 return value(array_get($responses, $this->format($defaultFormat)));
             }
 
-            return value(array_get($responses, $this->route('_format'), function () {
+            return value(array_get($responses, str_after($this->route('_format'), '.'), function () {
                 abort(404);
             }));
         });
