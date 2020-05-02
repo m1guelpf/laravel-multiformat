@@ -23,7 +23,7 @@ class MultiformatServiceProvider extends ServiceProvider
                 return value(Arr::get($responses, $this->format($defaultFormat)));
             }
 
-            return value(array_get($responses, str_after($this->route('_format'), '.'), function () {
+            return value(Arr::get($responses, str_after($this->route('_format'), '.'), function () {
                 abort(404);
             }));
         });
