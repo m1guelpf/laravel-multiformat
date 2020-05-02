@@ -5,6 +5,7 @@ namespace M1guelpf\Multiformat;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Arr;
 
 class MultiformatServiceProvider extends ServiceProvider
 {
@@ -19,7 +20,7 @@ class MultiformatServiceProvider extends ServiceProvider
 
         Request::macro('match', function ($responses, $defaultFormat = 'html') {
             if ($this->route('_format') === null) {
-                return value(array_get($responses, $this->format($defaultFormat)));
+                return value(Arr::get($responses, $this->format($defaultFormat)));
             }
 
             return value(array_get($responses, str_after($this->route('_format'), '.'), function () {
