@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 
 class MultiformatServiceProvider extends ServiceProvider
 {
@@ -23,7 +24,7 @@ class MultiformatServiceProvider extends ServiceProvider
                 return value(Arr::get($responses, $this->format($defaultFormat)));
             }
 
-            return value(Arr::get($responses, str_after($this->route('_format'), '.'), function () {
+            return value(Arr::get($responses, Str::after($this->route('_format'), '.'), function () {
                 abort(404);
             }));
         });
