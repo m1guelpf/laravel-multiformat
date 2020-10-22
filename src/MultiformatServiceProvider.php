@@ -4,8 +4,8 @@ namespace M1guelpf\Multiformat;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Arr;
+use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 
 class MultiformatServiceProvider extends ServiceProvider
